@@ -1,0 +1,132 @@
+/* 光明洲實修中心 — 千手千眼觀音八關齋戒
+   色與字沿用 Poster/設計規範/光明洲網宣設計規範_20260907.md */
+:root{
+  --navy:#1B3A52; --ink:#39444D; --grey:#65707A;
+  --paper:#FAF9F6; --warm:#D6B480; --line:rgba(34,65,90,.16);
+  --serif:"Noto Serif TC","Songti TC","Source Han Serif TC",serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);
+  font-weight:400;line-height:1.88;letter-spacing:.02em;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--navy)}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+
+/* 頁首 */
+.hero{position:relative;max-width:780px;margin:0 auto}
+/* 整張顯示，height:auto。用 cover＋固定高度會裁掉人的身體，不要那樣做 */
+.hero img{width:100%;height:auto}
+.hero.poster{max-width:780px;padding-top:22px}
+/* 首頁橫版主視覺：滿版，自身已含文字，不加漸層也不疊字 */
+.hero.web{max-width:1100px;padding-top:0}
+.hero.web::after{display:none}
+/* 只在底部收，inset:0 會把整張直式照片洗白 */
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:40%;
+  background:linear-gradient(to bottom,rgba(250,249,246,0) 0%,rgba(250,249,246,.55) 46%,
+    rgba(250,249,246,.88) 74%,var(--paper) 100%)}
+/* 覆寫要放在基底之後，靠權重贏是脆弱的 */
+.hero.poster::after{display:none}
+.hero-txt{position:absolute;z-index:2;left:0;right:0;bottom:22px;padding:0 26px;text-align:center}
+.hero-txt .ph{margin:0;font-size:clamp(19px,4.4vw,25px);line-height:1.6;letter-spacing:.05em}
+.hero-txt .eb{display:block;font-size:clamp(13px,3vw,15px);letter-spacing:.2em;
+  color:var(--grey);margin-bottom:8px;font-weight:400}
+
+/* 區塊 */
+section{padding:44px 0}
+h2{font-size:22px;font-weight:500;color:var(--navy);letter-spacing:.12em;
+  margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(27,58,82,.28)}
+h3{font-size:17.5px;font-weight:500;color:var(--navy);letter-spacing:.08em;margin:26px 0 10px}
+p{margin-bottom:16px}
+ul{margin:0 0 16px 1.1em}li{margin-bottom:7px}
+.lead{font-size:17px;color:var(--navy);font-weight:500}
+.quote{border-left:3px solid var(--warm);padding:6px 0 6px 20px;margin:22px 0;
+  color:var(--navy);font-size:16px;line-height:1.85}
+.note{background:rgba(214,180,128,.14);border:1px solid rgba(214,180,128,.46);
+  border-radius:4px;padding:16px 18px;margin:20px 0;font-size:15.5px;color:var(--ink)}
+.note b{color:var(--navy);font-weight:400}
+.muted{color:var(--grey);font-size:14.5px}
+
+/* 場次卡 */
+.cards{display:grid;gap:22px}
+.card{border:1px solid var(--line);border-radius:5px;padding:26px 24px;background:#fff}
+.card .tag{font-size:12.5px;letter-spacing:.26em;color:var(--grey);font-weight:500}
+.card h3{margin:8px 0 14px;font-size:20px;letter-spacing:.08em}
+.card .when{font-size:clamp(24px,5.5vw,32px);color:var(--navy);letter-spacing:.02em;
+  font-weight:200;line-height:1.35;margin-bottom:6px}
+.card .where{font-size:16px;color:var(--navy);margin-bottom:4px}
+.card .cond{font-size:15px;color:var(--ink);margin-bottom:20px}
+.status{display:inline-block;font-size:12px;letter-spacing:.16em;padding:3px 11px;
+  border-radius:99px;border:1px solid currentColor}
+.status.open{color:#3E6B4F}.status.soon{color:#9A7B44}.status.ended{color:var(--grey)}
+.card.ended{filter:grayscale(1);opacity:.6}
+
+/* 按鈕 */
+.btn{display:block;text-align:center;text-decoration:none;background:var(--navy);color:#fff;
+  padding:15px 20px;border-radius:4px;font-size:17px;letter-spacing:.12em}
+.btn:hover{background:#1a3348}
+.btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+.btn.off{background:#E7E4DE;color:var(--grey);pointer-events:none;border:none}
+
+/* 表單嵌入 */
+.embed{margin-top:22px;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:#fff}
+.embed iframe{width:100%;height:1100px;border:0;display:block}
+
+/* 資訊表 */
+.kv{width:100%;border-collapse:collapse;font-size:15px;margin-bottom:16px}
+.kv th{text-align:left;font-weight:500;color:var(--grey);width:6.6em;
+  padding:9px 12px 9px 0;vertical-align:top;white-space:nowrap}
+.kv td{padding:9px 0;color:var(--navy);border-bottom:1px solid var(--line)}
+.kv tr:last-child td{border-bottom:0}
+
+/* 頁尾 */
+footer{border-top:1px solid var(--line);margin-top:20px;padding:30px 0 46px;
+  text-align:center;color:var(--grey);font-size:14px}
+footer a{color:var(--grey)}
+.back{display:inline-block;margin-bottom:26px;font-size:14px;color:var(--grey);text-decoration:none}
+@media(max-width:560px){.embed iframe{height:1400px}}
+
+/* 長字串（羅馬拼音、網址）在窄螢幕會撐破版面 */
+body{overflow-wrap:break-word}
+.wrap,section,.card,.kv,.kv td{max-width:100%}
+@media(max-width:560px){
+  .kv th{width:5em;font-size:14px}
+  .kv td{font-size:14px}
+  .hero-txt .t{letter-spacing:.16em}
+}
+
+/* Notion 頁名與狀態列 */
+.ph{font-size:clamp(21px,4.4vw,27px);font-weight:500;color:var(--navy);
+  letter-spacing:.04em;line-height:1.55;margin:6px 0 12px}
+
+/* 視覺隱藏但螢幕閱讀器讀得到 */
+.vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* 報名區的附註：說明性的補充，字級小於內文 */
+.ps{font-size:14px;color:var(--grey);line-height:1.75;
+  border-left:2px solid rgba(27,58,82,.22);padding-left:14px;margin:18px 0}
+
+/* 報名表 */
+.rform h3{margin-top:34px}
+.f{display:block;border:0;margin:0 0 18px}
+.f>span,.f legend{display:block;color:var(--navy);font-weight:500;margin-bottom:6px}
+.f small{display:block;color:var(--grey);font-size:13.5px;margin:-4px 0 6px}
+.req{font-style:normal;color:#9A3B3B;margin-left:2px}
+.f input:not([type=radio]):not([type=checkbox]),.f textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);
+  background:#fff;border:1px solid rgba(34,65,90,.32);border-radius:4px;padding:10px 12px}
+.f input:focus,.f textarea:focus{outline:2px solid rgba(27,58,82,.45);outline-offset:1px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:8px 0;cursor:pointer;line-height:1.7}
+.opt input{margin-top:.45em;flex:none;width:18px;height:18px;accent-color:var(--navy)}
+.opt.box{border:1px solid var(--line);border-radius:4px;background:#fff;padding:12px 14px;margin:8px 0 14px;color:var(--navy)}
+.items{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+@media(max-width:560px){.items{grid-template-columns:1fr}}
+.total{margin:26px 0 8px;padding:16px 18px;border-radius:4px;background:#fff;border:1px solid var(--navy);color:var(--navy);font-size:17px}
+.total b{font-size:22px;font-weight:500;margin-left:6px}
+.err{color:#9A3B3B;background:#FBEFEF;border:1px solid #E7C5C5;border-radius:4px;padding:12px 14px}
+.rform .btn{width:100%;border:0;cursor:pointer;font-family:inherit;margin-top:22px}
+.rform .btn:disabled{opacity:.6;cursor:wait}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+[hidden]{display:none!important}
+.hero.poster{max-width:560px}

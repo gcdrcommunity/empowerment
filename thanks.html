@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>報名完成｜2026觀音灌頂</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <section>
+    <div data-r="free"><h1 class="ph">報名完成，感恩您</h1><p>我們已收到您的灌頂報名，法會前會寄行前通知到您填寫的 Email。</p></div>
+    <div data-r="ok"><h1 class="ph">報名與付款完成，感恩您的護持</h1><p>刷卡已完成。我們會寄確認信到您填寫的 Email，法會前也會寄行前通知。</p></div>
+    <div data-r="transfer"><h1 class="ph">報名完成，感恩您的護持</h1><p>我們將於 5 日內對帳，並透過 Email 寄發確認信。法會前也會寄行前通知。</p></div>
+    <div data-r="fail"><h1 class="ph">報名已收到，這次付款沒有成功</h1><p>卡片沒有被扣款。您可以回到活動頁重新填寫一次報名表付款，或透過 LINE 官方帳號與我們聯絡。</p></div>
+    <div data-r="none"><h1 class="ph">2026觀音灌頂</h1><p>這是報名完成後的頁面。尚未報名的法友，請回到活動頁填寫報名表。</p></div>
+    <p class="order" hidden>報名編號：<b></b></p>
+    <div class="quote">願以本次法會之功德，<br>祈願生者福慧增長、身心安穩，<br>願一切眾生同生極樂世界。</div>
+    <p><a class="btn" href="./">回到灌頂活動頁</a></p>
+    <p class="ps">若需聯繫，請洽 <a href="https://lin.ee/tcncN5E" target="_blank" rel="noopener">噶奇美多傑仁波切佛法社群官方 LINE</a> 或來信 <a href="mailto:oseling@chimirinpoche.org">oseling@chimirinpoche.org</a>。</p>
+  </section>
+</div>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search), r = q.get("r"), o = q.get("o") || "";
+  if (!document.querySelector('[data-r="' + r + '"]') || r === "none") r = "none";
+  document.querySelectorAll("[data-r]").forEach(function (el) { el.hidden = el.getAttribute("data-r") !== r; });
+  if (r !== "none" && /^[A-Z0-9]{6,30}$/.test(o)) {
+    var p = document.querySelector(".order"); p.querySelector("b").textContent = o; p.hidden = false;
+  }
+})();
+</script>
+</body>
+</html>
