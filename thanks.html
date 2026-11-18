@@ -26,7 +26,7 @@
 <script>
 (function () {
   var q = new URLSearchParams(location.search), r = q.get("r"), o = q.get("o") || "";
-  if (!document.querySelector('[data-r="' + r + '"]') || r === "none") r = "none";
+  if (["free", "ok", "transfer", "fail"].indexOf(r) < 0) r = "none";
   document.querySelectorAll("[data-r]").forEach(function (el) { el.hidden = el.getAttribute("data-r") !== r; });
   if (r !== "none" && /^[A-Z0-9]{6,30}$/.test(o)) {
     var p = document.querySelector(".order"); p.querySelector("b").textContent = o; p.hidden = false;
